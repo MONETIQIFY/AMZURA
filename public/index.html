@@ -29,8 +29,9 @@
       <nav class="nav-links">
         <a href="#wins">Results</a>
         <a href="#how">How it works</a>
-        <a href="#inside">What you get</a>
         <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
       </nav>
       <a class="btn btn-primary" href="/apply.html">Apply now</a>
     </div>
@@ -276,12 +277,69 @@
       </div>
     </section>
 
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">FAQ</span>
+          <h2>Questions, answered</h2>
+          <p>Everything you might want to know before applying to AMZURA.</p>
+        </div>
+        <div class="faq-list reveal">
+          <details class="faq-item">
+            <summary>Do I need any experience to start?</summary>
+            <div class="faq-body"><p>No. Most AMZURA students start from complete zero. The whole program is built to take beginners step by step — from picking your first product to launching and scaling it.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>How much money do I need to start selling on Amazon?</summary>
+            <div class="faq-body"><p>That depends on your product. Amazon FBA does need some capital for inventory and tools (separate from the coaching fee). We help you plan a realistic budget on your call so you start smart, not stretched.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>What exactly do I get for £750?</summary>
+            <div class="faq-body"><p>1-on-1 coaching with experienced sellers, our full product-research and launch system, supplier connections and negotiation scripts, the private community with live Q&amp;A calls, and lifetime access to everything including future updates.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>How is this different from a cheap online course?</summary>
+            <div class="faq-body"><p>Courses leave you alone with videos. AMZURA gives you real mentors, direct feedback, and accountability until your store is actually live and profitable. You're never guessing on your own.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>How soon will I see results?</summary>
+            <div class="faq-body"><p>It varies — Amazon FBA is a real business, not a get-rich-quick scheme. Your results depend on your effort, capital, and market. What we promise is a proven system and mentors who've done it, so you move faster and avoid the costly beginner mistakes.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>What if I can't afford it right now?</summary>
+            <div class="faq-body"><p>Apply anyway — it's free and takes two minutes. If now isn't the right time, we'll point you to our free community so you can keep learning until you're ready.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
     <!-- FINAL CTA -->
-    <section class="section">
+    <section class="section" style="background: var(--bg-elev);">
       <div class="container" style="max-width: 760px; text-align:center;">
         <h2>The right time to start was yesterday. <span class="gradient-text">The next best is now.</span></h2>
         <p style="font-size:1.1rem;">Apply today and get clarity on your exact next step. Worst case, it's free advice from people who've done it.</p>
         <a class="btn btn-primary btn-lg" href="/apply.html">Start your application</a>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Contact us</span>
+          <h2>Still have questions?</h2>
+          <p>Reach out and the AMZURA team will get back to you.</p>
+        </div>
+        <div class="contact-card reveal">
+          <h3>Talk to the team</h3>
+          <p>Email us directly, or jump into our community and ask anything.</p>
+          <div class="contact-methods">
+            <a class="btn btn-primary btn-lg" href="mailto:amzura.admin@gmail.com">Email us</a>
+            <a class="btn btn-ghost btn-lg" id="contactDiscord" href="#" target="_blank" rel="noopener">Join the community</a>
+          </div>
+          <p class="form-note" style="margin-top:22px;">Or <a href="/apply.html">apply now</a> and a mentor will reach out.</p>
+        </div>
       </div>
     </section>
   </main>
@@ -338,6 +396,8 @@
     document.addEventListener("amzura:config", function () {
       if (window.AMZURA.priceDisplay) document.getElementById("priceAmount").textContent = window.AMZURA.priceDisplay;
       if (window.AMZURA.priceSubtext) document.getElementById("priceSub").textContent = window.AMZURA.priceSubtext;
+      var cd = document.getElementById("contactDiscord");
+      if (cd && window.AMZURA.discordInvite) cd.href = window.AMZURA.discordInvite;
       wireVideo();
     });
     // In case config already loaded

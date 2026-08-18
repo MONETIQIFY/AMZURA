@@ -271,6 +271,36 @@ p { margin: 0 0 1rem; color: var(--text-dim); }
 .price-card li { padding: 10px 0; color: var(--text-dim); display: flex; gap: 12px; align-items: flex-start; }
 .price-card li::before { content: "✓"; color: var(--good); font-weight: 900; }
 
+/* ---- FAQ accordion ---- */
+.faq-list { max-width: 780px; margin: 0 auto; display: grid; gap: 14px; }
+.faq-item {
+  border: 1px solid var(--border); border-radius: var(--radius-sm);
+  background: linear-gradient(180deg, var(--bg-card), var(--bg-elev)); overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+.faq-item[open] { border-color: var(--border-strong); }
+.faq-item summary {
+  cursor: pointer; padding: 20px 22px; font-weight: 700; color: var(--text);
+  list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: "+"; color: var(--blue-bright); font-size: 1.5rem; font-weight: 400;
+  line-height: 1; transition: transform 0.2s ease; flex: 0 0 auto;
+}
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item .faq-body { padding: 0 22px 20px; color: var(--text-dim); }
+.faq-item .faq-body p { margin: 0; }
+
+/* ---- Contact ---- */
+.contact-card {
+  max-width: 720px; margin: 0 auto; text-align: center;
+  border: 1px solid var(--border-strong); border-radius: var(--radius);
+  background: linear-gradient(180deg, var(--bg-card), var(--bg-elev)); padding: 44px 36px;
+}
+.contact-methods { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 26px; }
+.contact-methods .btn { min-width: 200px; }
+
 /* ---- Price comparison (cost of doing nothing vs AMZURA) ---- */
 .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 900px; margin: 0 auto; align-items: stretch; }
 .compare-card {
