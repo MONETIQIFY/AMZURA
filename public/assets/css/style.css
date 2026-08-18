@@ -391,7 +391,7 @@ p { margin: 0 0 1rem; color: var(--text-dim); }
 }
 .brand .wordmark { font-size: 1.5rem; }
 
-/* Round emblem fallback (mirrors the logo's circular mark) */
+/* Round emblem fallback (shown until the real logo image is wired in) */
 .emblem {
   width: 40px; height: 40px; border-radius: 50%; flex: 0 0 auto;
   display: grid; place-items: center; position: relative;
