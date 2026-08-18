@@ -9,7 +9,7 @@ window.AMZURA = {
 
   // Displayed price on the sales page (cosmetic only — the real charge
   // is controlled by the Stripe Price ID in your env vars).
-  priceDisplay: "$4,000",
+  priceDisplay: "£750",
   priceSubtext: "one-time · lifetime access",
 
   // Fallbacks used only if the site-config function is unreachable.

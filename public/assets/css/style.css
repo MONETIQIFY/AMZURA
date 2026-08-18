@@ -271,6 +271,42 @@ p { margin: 0 0 1rem; color: var(--text-dim); }
 .price-card li { padding: 10px 0; color: var(--text-dim); display: flex; gap: 12px; align-items: flex-start; }
 .price-card li::before { content: "✓"; color: var(--good); font-weight: 900; }
 
+/* ---- Price comparison (cost of doing nothing vs AMZURA) ---- */
+.compare { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 900px; margin: 0 auto; align-items: stretch; }
+.compare-card {
+  border-radius: var(--radius); padding: 32px 30px; border: 1px solid var(--border);
+  background: linear-gradient(180deg, var(--bg-card), var(--bg-elev)); display: flex; flex-direction: column;
+}
+.compare-card .cc-label { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
+.compare-card .cc-price { font-size: 2.6rem; font-weight: 900; letter-spacing: -0.02em; line-height: 1; margin-bottom: 4px; }
+.compare-card .cc-sub { color: var(--text-faint); font-size: 0.9rem; margin-bottom: 22px; }
+.compare-card ul { list-style: none; padding: 0; margin: 0 0 24px; flex: 1; }
+.compare-card li { display: flex; gap: 12px; align-items: flex-start; padding: 9px 0; font-size: 0.96rem; }
+.compare-card li svg { width: 18px; height: 18px; flex: 0 0 auto; margin-top: 3px; }
+
+/* Negative / do-nothing card */
+.compare-card.negative { border-color: rgba(220,38,38,0.28); }
+.compare-card.negative .cc-label { color: #f87171; }
+.compare-card.negative .cc-price { color: var(--text-dim); }
+.compare-card.negative li { color: var(--text-dim); }
+.compare-card.negative li svg { stroke: #ef4444; fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Positive / AMZURA card */
+.compare-card.positive { position: relative; border-color: var(--blue); box-shadow: 0 20px 60px rgba(10,107,255,0.18); }
+.compare-card.positive::before {
+  content: "Recommended"; position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+  background: linear-gradient(120deg, var(--blue), var(--blue-bright)); color: #fff;
+  font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 5px 14px; border-radius: 999px; white-space: nowrap;
+}
+.compare-card.positive .cc-label { color: var(--cyan); }
+.compare-card.positive .cc-price { color: var(--text); }
+.compare-card.positive li { color: var(--text); }
+.compare-card.positive li svg { stroke: var(--good); fill: none; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.compare-card.positive .btn { width: 100%; }
+
+@media (max-width: 760px) { .compare { grid-template-columns: 1fr; } }
+
 /* ---- Footer ---- */
 .site-footer { border-top: 1px solid var(--border); padding: 48px 0; color: var(--text-faint); font-size: 0.9rem; }
 .site-footer .container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; align-items: center; }
