@@ -145,7 +145,7 @@ p { margin: 0 0 1rem; color: var(--text-dim); }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 90px;
+  height: 82px;
 }
 .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 1.25rem; color: var(--text); letter-spacing: -0.02em; }
 .brand .logo-mark {
@@ -405,11 +405,11 @@ p { margin: 0 0 1rem; color: var(--text-dim); }
 
 /* Real logo image swaps in when the file exists; text mark is the fallback */
 .brand-fallback { display: flex; align-items: center; gap: 12px; }
-.brand-logo-img { height: 64px; width: auto; max-width: 340px; display: none; border-radius: 8px; }
+.brand-logo-img { height: 56px; width: auto; max-width: 260px; display: none; }
 .brand-logo-img.loaded { display: block; }
 .brand-logo-img.loaded + .brand-fallback { display: none; }
-.footer-logo { height: 72px; max-width: 360px; }
-@media (max-width: 560px) { .brand-logo-img { height: 48px; max-width: 230px; } .site-header .container { height: 74px; } }
+.footer-logo { height: 84px; max-width: 400px; }
+@media (max-width: 560px) { .brand-logo-img { height: 46px; max-width: 200px; } .site-header .container { height: 72px; } .footer-logo { height: 64px; } }
 
 /* ---- Marquee / trust bar ---- */
 .trust-bar {
