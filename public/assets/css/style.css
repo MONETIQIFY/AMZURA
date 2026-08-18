@@ -9,10 +9,16 @@
   --border: #1b2540;
   --border-strong: #2a3a63;
 
-  --blue: #2f6bff;
-  --blue-bright: #4d84ff;
-  --blue-glow: rgba(47, 107, 255, 0.45);
-  --cyan: #38bdf8;
+  --blue: #0a6bff;
+  --blue-bright: #2f8bff;
+  --blue-deep: #0546c9;
+  --blue-glow: rgba(10, 107, 255, 0.5);
+  --cyan: #37c3ff;
+
+  /* Metallic silver (matches the logo wordmark) */
+  --silver-1: #f4f7ff;
+  --silver-2: #c3ccdd;
+  --silver-3: #8b93a7;
 
   --text: #eef2ff;
   --text-dim: #9aa6c7;
@@ -269,10 +275,99 @@ p { margin: 0 0 1rem; color: var(--text-dim); }
 /* Cal.com embed frame */
 .cal-embed { min-height: 640px; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); }
 
+/* =====================================================================
+   Logo wordmark (metallic AMZ + electric URA) — matches the brand logo.
+   Used as a crisp, resolution-independent fallback + header/footer mark.
+   ===================================================================== */
+.wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  font-family: var(--font);
+}
+.wordmark .amz {
+  background: linear-gradient(180deg, var(--silver-1) 0%, var(--silver-2) 45%, var(--silver-3) 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.wordmark .ura {
+  background: linear-gradient(180deg, var(--blue-bright) 0%, var(--blue) 55%, var(--blue-deep) 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.brand .wordmark { font-size: 1.5rem; }
+
+/* Round emblem fallback (mirrors the logo's circular mark) */
+.emblem {
+  width: 40px; height: 40px; border-radius: 50%; flex: 0 0 auto;
+  display: grid; place-items: center; position: relative;
+  background: radial-gradient(circle at 50% 30%, #0d1730, #05070d);
+  border: 1.5px solid var(--blue);
+  box-shadow: 0 0 16px var(--blue-glow), inset 0 0 10px rgba(10,107,255,0.35);
+  font-weight: 900; color: var(--silver-1); font-size: 1.1rem;
+}
+.emblem::after { content: "↗"; position: absolute; top: 4px; right: 7px; font-size: 0.7rem; color: var(--cyan); }
+
+/* Real logo image swaps in when the file exists; text mark is the fallback */
+.brand-logo-img { height: 40px; width: auto; display: none; }
+.brand-logo-img.loaded { display: block; }
+.brand-logo-img.loaded + .brand-fallback { display: none; }
+
+/* ---- Marquee / trust bar ---- */
+.trust-bar {
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  background: rgba(10,107,255,0.04); padding: 16px 0; overflow: hidden;
+}
+.trust-bar .track { display: flex; gap: 48px; white-space: nowrap; color: var(--text-faint); font-weight: 600; font-size: 0.9rem; letter-spacing: 0.02em; }
+.trust-bar .track span { display: inline-flex; align-items: center; gap: 10px; }
+
+/* ---- Urgency banner ---- */
+.urgency {
+  text-align: center; background: linear-gradient(90deg, var(--blue-deep), var(--blue));
+  color: #fff; padding: 12px 16px; font-weight: 700; font-size: 0.95rem;
+}
+.urgency b { color: #fff; }
+
+/* =====================================================================
+   Student Wins (testimonials) — built for phone screenshots
+   ===================================================================== */
+.wins-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.win-card {
+  position: relative; border-radius: var(--radius); overflow: hidden;
+  border: 1px solid var(--border); background: linear-gradient(180deg, var(--bg-card), var(--bg-elev));
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.win-card:hover { transform: translateY(-4px); border-color: var(--blue); box-shadow: 0 16px 50px rgba(10,107,255,0.18); }
+.win-media { position: relative; aspect-ratio: 9 / 12; background: #05070d; overflow: hidden; }
+.win-media img { width: 100%; height: 100%; object-fit: cover; display: none; }
+.win-media img.loaded { display: block; }
+/* Fallback graphic shown until a real screenshot is dropped in */
+.win-fallback {
+  position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: space-between;
+  padding: 22px; background:
+    radial-gradient(70% 50% at 50% 0%, rgba(10,107,255,0.22), transparent 70%),
+    repeating-linear-gradient(135deg, rgba(255,255,255,0.02) 0 12px, transparent 12px 24px), #070b16;
+}
+.win-media img.loaded ~ .win-fallback { display: none; }
+.win-amount { font-size: 2.4rem; font-weight: 900; letter-spacing: -0.02em; }
+.win-amount .cur { color: var(--cyan); }
+.win-tag { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text-faint); }
+.win-fallback .verified { align-self: flex-start; }
+.win-caption { padding: 18px 20px; }
+.win-caption .headline { font-weight: 800; color: var(--text); margin-bottom: 4px; }
+.win-caption .sub { font-size: 0.85rem; color: var(--text-dim); margin: 0; }
+.verified {
+  display: inline-flex; align-items: center; gap: 6px; font-size: 0.72rem; font-weight: 700;
+  color: var(--good); background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.3);
+  padding: 4px 10px; border-radius: 999px;
+}
+.wins-disclaimer { text-align: center; color: var(--text-faint); font-size: 0.8rem; margin-top: 28px; max-width: 640px; margin-left: auto; margin-right: auto; }
+
 /* ---- Responsive ---- */
 @media (max-width: 860px) {
   .grid-3 { grid-template-columns: 1fr; }
   .grid-2 { grid-template-columns: 1fr; }
+  .wins-grid { grid-template-columns: 1fr; max-width: 380px; margin: 0 auto; }
   .nav-links { display: none; }
   .section { padding: 64px 0; }
 }

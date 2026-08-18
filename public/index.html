@@ -3,25 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AMZURA — Amazon FBA Mentorship</title>
-  <meta name="description" content="Build a profitable Amazon FBA business with 1-on-1 mentorship from 7-figure sellers. Apply for the AMZURA mentorship program." />
+  <title>AMZURA — Amazon FBA Coaching · Build. Scale. Freedom.</title>
+  <meta name="description" content="AMZURA is 1-on-1 Amazon FBA coaching from sellers doing real numbers. Build your store, scale to 5-figure months, and buy your freedom. Apply now." />
+  <meta property="og:title" content="AMZURA — Amazon FBA Coaching" />
+  <meta property="og:description" content="Build. Scale. Freedom. 1-on-1 Amazon FBA mentorship from 7-figure sellers." />
+  <meta property="og:image" content="/assets/img/og-image.jpg" />
+  <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/css/style.css" />
 </head>
 <body>
+  <!-- Urgency / scarcity banner -->
+  <div class="urgency">🔥 New intake is open — <b>limited coaching spots</b> this month. Applications reviewed daily.</div>
+
   <header class="site-header">
     <div class="container">
       <a class="brand" href="/">
-        <span class="logo-mark">A</span>
-        <span>AMZURA</span>
+        <img class="brand-logo-img" src="/assets/img/logo.png" alt="AMZURA" data-logo />
+        <span class="brand-fallback" style="display:flex;align-items:center;gap:12px;">
+          <span class="emblem">A</span>
+          <span class="wordmark"><span class="amz">AMZ</span><span class="ura">URA</span></span>
+        </span>
       </a>
       <nav class="nav-links">
+        <a href="#wins">Student wins</a>
         <a href="#how">How it works</a>
-        <a href="#results">Results</a>
+        <a href="#inside">What you get</a>
         <a href="#pricing">Pricing</a>
-        <a href="#faq">FAQ</a>
       </nav>
       <a class="btn btn-primary" href="/apply.html">Apply now</a>
     </div>
@@ -30,106 +40,176 @@
   <main>
     <!-- HERO -->
     <section class="hero container">
-      <span class="eyebrow">🚀 Amazon FBA Mentorship</span>
-      <h1 class="gradient-text">Build a real Amazon FBA business — with mentors who've actually done it</h1>
-      <p class="sub">Stop guessing. Get a proven roadmap, done-with-you product research, and 1-on-1 guidance from 7-figure sellers until you launch and scale.</p>
+      <span class="eyebrow">⚡ Amazon FBA Coaching · Build. Scale. Freedom.</span>
+      <h1>Turn Amazon into a <span class="gradient-text">real income</span> — with mentors doing real numbers</h1>
+      <p class="sub">No fluff, no theory. Get a proven system, done-with-you product research, and 1-on-1 coaching until your store is live and printing. This is for people ready to actually do the work.</p>
       <div class="hero-cta">
-        <a class="btn btn-primary btn-lg" href="/apply.html">Apply for mentorship →</a>
-        <a class="btn btn-ghost btn-lg" href="#how">See how it works</a>
+        <a class="btn btn-primary btn-lg" href="/apply.html">Apply for coaching →</a>
+        <a class="btn btn-ghost btn-lg" href="#wins">See student wins</a>
       </div>
-      <p class="hero-trust">Limited spots · Serious applicants only · Direct mentor access</p>
+      <p class="hero-trust">Serious applicants only · Direct mentor access · Limited spots</p>
     </section>
 
-    <!-- STATS -->
-    <section class="section-tight container">
-      <div class="stats">
-        <div class="stat"><div class="num">7-figure</div><div class="label">Seller mentors</div></div>
-        <div class="stat"><div class="num">1-on-1</div><div class="label">Direct guidance</div></div>
-        <div class="stat"><div class="num">90 days</div><div class="label">To your first launch</div></div>
-        <div class="stat"><div class="num">Lifetime</div><div class="label">Community access</div></div>
+    <!-- TRUST BAR -->
+    <div class="trust-bar">
+      <div class="container">
+        <div class="track">
+          <span>✅ Real student results</span>
+          <span>📦 Product research included</span>
+          <span>🤝 Supplier connections</span>
+          <span>📈 Ads &amp; scaling playbooks</span>
+          <span>💬 Private community</span>
+          <span>♾️ Lifetime access</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- STUDENT WINS -->
+    <section class="section" id="wins">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">🏆 Student wins</span>
+          <h2>Results speak louder than promises</h2>
+          <p>Real screenshots from real students inside the AMZURA program.</p>
+        </div>
+
+        <div class="wins-grid">
+          <div class="win-card">
+            <div class="win-media">
+              <img data-win="1" src="/assets/img/testimonials/win-1.jpg" alt="Student win: £30k in 30 days" />
+              <div class="win-fallback">
+                <span class="verified">✔ Verified win</span>
+                <div>
+                  <div class="win-amount"><span class="cur">£</span>30k</div>
+                  <div class="win-tag">in 30 days</div>
+                </div>
+              </div>
+            </div>
+            <div class="win-caption">
+              <div class="headline">£30k in 30 days 😭🐐</div>
+              <p class="sub">Store health: healthy · sales trending straight up.</p>
+            </div>
+          </div>
+
+          <div class="win-card">
+            <div class="win-media">
+              <img data-win="2" src="/assets/img/testimonials/win-2.jpg" alt="Student win: £15k in one week" />
+              <div class="win-fallback">
+                <span class="verified">✔ Verified win</span>
+                <div>
+                  <div class="win-amount"><span class="cur">£</span>15k</div>
+                  <div class="win-tag">in one week · on track for £60k/mo</div>
+                </div>
+              </div>
+            </div>
+            <div class="win-caption">
+              <div class="headline">£15k in one week 🚀🐐</div>
+              <p class="sub">This student is on track for a £60k month.</p>
+            </div>
+          </div>
+
+          <div class="win-card">
+            <div class="win-media">
+              <img data-win="3" src="/assets/img/testimonials/win-3.jpg" alt="Student win: £600 profit on one product" />
+              <div class="win-fallback">
+                <span class="verified">✔ Verified win</span>
+                <div>
+                  <div class="win-amount"><span class="cur">£</span>600</div>
+                  <div class="win-tag">profit · ONE product</div>
+                </div>
+              </div>
+            </div>
+            <div class="win-caption">
+              <div class="headline">£600 profit on ONE product 🔥</div>
+              <p class="sub">Expecting 50% ROI on this one alone.</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="wins-disclaimer">Results shown are from individual students and are not typical or guaranteed. Amazon FBA is a real business — outcomes depend on your effort, capital, and market conditions.</p>
+
+        <div style="text-align:center; margin-top:32px;">
+          <a class="btn btn-primary btn-lg" href="/apply.html">I want results like these →</a>
+        </div>
       </div>
     </section>
 
     <!-- HOW IT WORKS -->
-    <section class="section" id="how">
+    <section class="section" id="how" style="background: var(--bg-elev);">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow">The path</span>
-          <h2>A clear system — not another course you never finish</h2>
+          <span class="eyebrow">The system</span>
+          <h2>A clear path — not another course you never finish</h2>
           <p>We take you from zero to a launched, profitable product with structure and accountability.</p>
         </div>
         <div class="grid grid-3">
-          <div class="card"><div class="icon">🔎</div><h3>1. Product research</h3><p>Learn our data-driven method to find products with real demand and healthy margins — no guesswork.</p></div>
-          <div class="card"><div class="icon">📦</div><h3>2. Sourcing &amp; launch</h3><p>Negotiate with suppliers, handle logistics, and launch with a strategy built to rank and convert.</p></div>
-          <div class="card"><div class="icon">📈</div><h3>3. Scale &amp; systemize</h3><p>Optimize ads, expand your catalog, and build the systems that turn a product into a business.</p></div>
+          <div class="card"><div class="icon">🔎</div><h3>1. Find the product</h3><p>Our data-driven research method to find products with real demand and healthy margins — no guessing.</p></div>
+          <div class="card"><div class="icon">📦</div><h3>2. Source &amp; launch</h3><p>Negotiate with vetted suppliers, handle logistics, and launch with a strategy built to rank and sell.</p></div>
+          <div class="card"><div class="icon">📈</div><h3>3. Scale &amp; systemize</h3><p>Dial in your ads, expand the catalog, and build the systems that turn a product into a business.</p></div>
         </div>
       </div>
     </section>
 
     <!-- WHAT YOU GET -->
-    <section class="section" id="results" style="background: var(--bg-elev);">
+    <section class="section" id="inside">
       <div class="container">
         <div class="section-head">
           <span class="eyebrow">What's inside</span>
           <h2>Everything you need to actually win</h2>
         </div>
         <div class="grid grid-3">
-          <div class="card"><div class="icon">🎯</div><h3>1-on-1 mentorship</h3><p>Direct calls with mentors who've built 7-figure FBA brands and will hold you accountable.</p></div>
+          <div class="card"><div class="icon">🎯</div><h3>1-on-1 mentorship</h3><p>Direct calls with mentors who've built real FBA income and will hold you accountable.</p></div>
           <div class="card"><div class="icon">🗺️</div><h3>Step-by-step roadmap</h3><p>The exact sequence to follow, with templates, checklists, and supplier scripts.</p></div>
           <div class="card"><div class="icon">💬</div><h3>Private community</h3><p>A network of serious sellers to share wins, troubleshoot, and stay motivated.</p></div>
           <div class="card"><div class="icon">🧠</div><h3>Live Q&amp;A calls</h3><p>Recurring group calls to get your specific questions answered in real time.</p></div>
           <div class="card"><div class="icon">🛠️</div><h3>Tools &amp; resources</h3><p>Our vetted stack for research, sourcing, and ad management — and how to use it.</p></div>
-          <div class="card"><div class="icon">♾️</div><h3>Lifetime access</h3><p>Keep the material and community forever, including future updates.</p></div>
+          <div class="card"><div class="icon">♾️</div><h3>Lifetime access</h3><p>Keep the material and the community forever, including all future updates.</p></div>
         </div>
       </div>
     </section>
 
     <!-- PRICING -->
-    <section class="section" id="pricing">
+    <section class="section" id="pricing" style="background: var(--bg-elev);">
       <div class="container">
         <div class="section-head">
           <span class="eyebrow">Investment</span>
-          <h2>Serious mentorship for serious sellers</h2>
-          <p>This is a high-touch program. Apply first — we only take on people we're confident we can help.</p>
+          <h2>Serious coaching for serious people</h2>
+          <p>This is high-touch, hands-on mentorship. Apply first — we only take people we're confident we can get results for.</p>
         </div>
         <div class="price-card">
-          <h3>AMZURA Mentorship</h3>
+          <h3>AMZURA Coaching</h3>
           <div class="amount" id="priceAmount">$4,000</div>
           <div style="color: var(--text-faint);" id="priceSub">one-time · lifetime access</div>
           <ul>
-            <li>1-on-1 mentorship with 7-figure sellers</li>
+            <li>1-on-1 coaching with experienced sellers</li>
             <li>Full product research &amp; launch system</li>
-            <li>Supplier negotiation scripts &amp; templates</li>
+            <li>Supplier connections + negotiation scripts</li>
             <li>Private community + live Q&amp;A calls</li>
             <li>Lifetime access &amp; future updates</li>
           </ul>
           <a class="btn btn-primary btn-lg" href="/apply.html" style="width:100%;">Apply now →</a>
-          <p class="form-note">Not sure yet? Applying is free and takes 2 minutes.</p>
+          <p class="form-note">Not sure yet? Applying is free and takes 2 minutes. If it's not the right fit, we'll point you to our free community.</p>
         </div>
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="section" id="faq" style="background: var(--bg-elev);">
-      <div class="container" style="max-width: 780px;">
-        <div class="section-head"><span class="eyebrow">FAQ</span><h2>Common questions</h2></div>
-        <div class="grid" style="gap:16px;">
-          <div class="card"><h3>Do I need experience?</h3><p>No. Most of our students start from zero. The program is built to take complete beginners to a launched product.</p></div>
-          <div class="card"><h3>How much capital do I need to start?</h3><p>We'll cover this on your application and call. FBA does require inventory investment — we help you plan for it realistically.</p></div>
-          <div class="card"><h3>What if I'm not ready to invest yet?</h3><p>No problem. Apply anyway — if it's not the right time, we'll point you to our free community so you can keep learning.</p></div>
-          <div class="card"><h3>How do I get started?</h3><p>Hit "Apply now", answer a few quick questions, and we'll route you to the best next step — a call, enrollment, or our community.</p></div>
-        </div>
-        <div style="text-align:center; margin-top:40px;">
-          <a class="btn btn-primary btn-lg" href="/apply.html">Start your application →</a>
-        </div>
+    <!-- FINAL CTA -->
+    <section class="section">
+      <div class="container" style="max-width: 760px; text-align:center;">
+        <h2>Your competition already started. <span class="gradient-text">Will you?</span></h2>
+        <p style="font-size:1.1rem;">Every day you wait is a day someone less capable than you gets ahead. Apply now — worst case, you get clarity on your next step for free.</p>
+        <a class="btn btn-primary btn-lg" href="/apply.html">Start your application →</a>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <div class="brand"><span class="logo-mark">A</span><span>AMZURA</span></div>
-      <div>© <span id="year"></span> AMZURA. All rights reserved.</div>
+      <div class="brand">
+        <span class="emblem">A</span>
+        <span class="wordmark" style="font-size:1.25rem;"><span class="amz">AMZ</span><span class="ura">URA</span></span>
+      </div>
+      <div>© <span id="year"></span> AMZURA · Amazon FBA Coaching. All rights reserved.</div>
     </div>
   </footer>
 
@@ -137,6 +217,18 @@
   <script src="/assets/js/main.js"></script>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Swap in real images only when the file actually exists; otherwise
+    // leave the clean text/graphic fallback in place (no broken images).
+    function activateIfLoads(img) {
+      if (!img) return;
+      var test = new Image();
+      test.onload = function () { img.classList.add("loaded"); };
+      test.onerror = function () { img.remove(); };
+      test.src = img.getAttribute("src");
+    }
+    document.querySelectorAll("[data-win], [data-logo]").forEach(activateIfLoads);
+
     document.addEventListener("amzura:config", function () {
       if (window.AMZURA.priceDisplay) document.getElementById("priceAmount").textContent = window.AMZURA.priceDisplay;
       if (window.AMZURA.priceSubtext) document.getElementById("priceSub").textContent = window.AMZURA.priceSubtext;
