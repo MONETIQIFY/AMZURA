@@ -1,0 +1,4 @@
+Upload your 3 student-win screenshots into this folder, named exactly:
+  win-1.jpg   win-2.jpg   win-3.jpg
+
+They then appear automatically on the landing page (Student results).
