@@ -13,6 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/css/style.css" />
+  <noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
 </head>
 <body>
   <!-- Scarcity banner -->
@@ -38,16 +39,36 @@
   </header>
 
   <main>
-    <!-- HERO -->
+    <!-- HERO (VSL) -->
     <section class="hero container">
-      <span class="eyebrow">Amazon FBA Coaching · Build. Scale. Freedom.</span>
-      <h1>Turn Amazon into a <span class="gradient-text">real income</span>, with mentors who've done it</h1>
-      <p class="sub">A proven system, done-with-you product research, and 1-on-1 coaching until your store is live and profitable. Built for people ready to put in the work.</p>
-      <div class="hero-cta">
-        <a class="btn btn-primary btn-lg" href="/apply.html">Apply for coaching</a>
-        <a class="btn btn-ghost btn-lg" href="#wins">See student results</a>
+      <span class="eyebrow reveal">For anyone ready to build a real income with Amazon FBA</span>
+      <h1 class="reveal">How everyday people are building <span class="hl">£3,000/month</span> Amazon stores — without quitting their job</h1>
+      <p class="sub reveal">Learn the exact step-by-step system our students use to build a second income with Amazon FBA. No experience needed. No corporate ladder. No waiting years to see it work.</p>
+
+      <div class="steps-indicator reveal">
+        <span class="st"><span class="n">1</span> Watch the short video</span>
+        <span class="dash"></span>
+        <span class="st"><span class="n">2</span> Apply for a strategy call</span>
       </div>
-      <p class="hero-trust">Serious applicants only · Direct mentor access · Limited spots</p>
+
+      <!-- Sales video: set window.AMZURA.videoId (YouTube ID) to embed it -->
+      <div class="vsl reveal" id="vsl">
+        <div class="vsl-ratio" id="vslRatio">
+          <div class="vsl-poster" id="vslPoster" role="button" tabindex="0" aria-label="Play the video">
+            <span class="ppulse"></span>
+            <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></span>
+            <div>
+              <div class="ptitle">Watch how AMZURA works</div>
+              <p class="psub">A short breakdown of the system — then apply if it's for you.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-under-video reveal">
+        <a class="btn btn-primary btn-lg" href="/apply.html">Apply for a strategy call</a>
+        <p class="hero-trust">Serious applicants only · Limited coaching spots · Reviewed daily</p>
+      </div>
     </section>
 
     <!-- TRUST BAR -->
@@ -274,10 +295,44 @@
     }
     document.querySelectorAll("[data-win], [data-logo]").forEach(activateIfLoads);
 
+    // Reveal-on-scroll motion (subtle, respects reduced-motion)
+    (function () {
+      var els = document.querySelectorAll(".reveal");
+      if (!("IntersectionObserver" in window)) { els.forEach(function (e) { e.classList.add("in"); }); return; }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
+      }, { threshold: 0.12 });
+      els.forEach(function (e) { io.observe(e); });
+    })();
+
+    // VSL video: embed YouTube when an ID is configured or the poster is clicked
+    function embedVideo(id, autoplay) {
+      var ratio = document.getElementById("vslRatio");
+      if (!ratio || !id) return;
+      var params = "rel=0&modestbranding=1&playsinline=1" + (autoplay ? "&autoplay=1" : "");
+      ratio.innerHTML = '<iframe src="https://www.youtube.com/embed/' + id + '?' + params +
+        '" title="AMZURA" allow="accelerated-download; autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
+    }
+    function wireVideo() {
+      var id = window.AMZURA && window.AMZURA.videoId;
+      var poster = document.getElementById("vslPoster");
+      if (id) {
+        // Show poster, but load the real video on click (keeps page fast)
+        if (poster) {
+          var go = function () { embedVideo(id, true); };
+          poster.addEventListener("click", go);
+          poster.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") go(); });
+        }
+      }
+    }
+
     document.addEventListener("amzura:config", function () {
       if (window.AMZURA.priceDisplay) document.getElementById("priceAmount").textContent = window.AMZURA.priceDisplay;
       if (window.AMZURA.priceSubtext) document.getElementById("priceSub").textContent = window.AMZURA.priceSubtext;
+      wireVideo();
     });
+    // In case config already loaded
+    if (window.AMZURA && window.AMZURA.loaded) wireVideo();
   </script>
 </body>
 </html>
