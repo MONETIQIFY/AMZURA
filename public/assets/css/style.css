@@ -391,6 +391,11 @@ p { margin: 0 0 1rem; color: var(--text-dim); }
   -webkit-background-clip: text; background-clip: text; color: transparent;
 }
 .brand .wordmark { font-size: 1.5rem; }
+/* Big brand name shown next to the logo image */
+.brand-name { font-size: 1.7rem; letter-spacing: -0.03em; }
+.footer-logo + .brand-name { font-size: 2rem; }
+.footer-tag { color: var(--cyan); font-weight: 700; letter-spacing: 0.16em; font-size: 0.78rem; text-transform: uppercase; }
+@media (max-width: 560px) { .brand-name { font-size: 1.4rem; } .footer-logo + .brand-name { font-size: 1.6rem; } }
 
 /* Round emblem fallback (shown until the real logo image is wired in) */
 .emblem {
