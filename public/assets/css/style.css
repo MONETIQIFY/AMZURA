@@ -408,8 +408,8 @@ p { margin: 0 0 1rem; color: var(--text-dim); }
 .brand-logo-img { height: 56px; width: auto; max-width: 260px; display: none; }
 .brand-logo-img.loaded { display: block; }
 .brand-logo-img.loaded + .brand-fallback { display: none; }
-.footer-logo { height: 84px; max-width: 400px; }
-@media (max-width: 560px) { .brand-logo-img { height: 46px; max-width: 200px; } .site-header .container { height: 72px; } .footer-logo { height: 64px; } }
+.footer-logo { height: 68px; max-width: 300px; }
+@media (max-width: 560px) { .brand-logo-img { height: 46px; max-width: 200px; } .site-header .container { height: 72px; } .footer-logo { height: 56px; } }
 
 /* ---- Marquee / trust bar ---- */
 .trust-bar {
