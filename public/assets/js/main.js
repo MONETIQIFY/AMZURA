@@ -73,3 +73,25 @@
     });
   });
 })();
+
+/* ---------------------------------------------------------------------
+   Swap in real brand/testimonial images ONLY when the file actually
+   loads. If it fails, the clean text/graphic fallback stays (no broken
+   images). Runs on every page that loads this script.
+   ------------------------------------------------------------------- */
+(function () {
+  function activate(img) {
+    if (!img) return;
+    var test = new Image();
+    test.onload = function () {
+      img.classList.add("loaded");
+      var media = img.closest(".win-media");
+      if (media) media.classList.add("has-img");
+    };
+    test.onerror = function () { img.remove(); };
+    test.src = img.getAttribute("src");
+  }
+  function run() { document.querySelectorAll("[data-win], [data-logo]").forEach(activate); }
+  if (document.readyState !== "loading") run();
+  else document.addEventListener("DOMContentLoaded", run);
+})();

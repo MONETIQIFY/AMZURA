@@ -403,9 +403,12 @@ p { margin: 0 0 1rem; color: var(--text-dim); }
 .emblem::after { content: "↗"; position: absolute; top: 4px; right: 7px; font-size: 0.7rem; color: var(--cyan); }
 
 /* Real logo image swaps in when the file exists; text mark is the fallback */
-.brand-logo-img { height: 40px; width: auto; display: none; }
+.brand-fallback { display: flex; align-items: center; gap: 12px; }
+.brand-logo-img { height: 48px; width: auto; max-width: 220px; display: none; }
 .brand-logo-img.loaded { display: block; }
 .brand-logo-img.loaded + .brand-fallback { display: none; }
+.footer-logo { height: 40px; max-width: 190px; }
+@media (max-width: 560px) { .brand-logo-img { height: 40px; max-width: 160px; } }
 
 /* ---- Marquee / trust bar ---- */
 .trust-bar {

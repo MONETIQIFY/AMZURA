@@ -7,8 +7,9 @@
   <meta name="description" content="AMZURA is 1-on-1 Amazon FBA coaching from experienced sellers. Build your store, scale to consistent months, and earn your freedom. Apply now." />
   <meta property="og:title" content="AMZURA — Amazon FBA Coaching" />
   <meta property="og:description" content="Build. Scale. Freedom. 1-on-1 Amazon FBA mentorship from experienced sellers." />
-  <meta property="og:image" content="/assets/img/og-image.jpg" />
+  <meta property="og:image" content="https://i.postimg.cc/GtGRSVTZ/amzura.png" />
   <meta property="og:type" content="website" />
+  <link rel="icon" type="image/png" href="https://i.postimg.cc/GtGRSVTZ/amzura.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -22,8 +23,8 @@
   <header class="site-header">
     <div class="container">
       <a class="brand" href="/">
-        <img class="brand-logo-img" src="/assets/img/logo.png" alt="AMZURA" data-logo />
-        <span class="brand-fallback" style="display:flex;align-items:center;gap:12px;">
+        <img class="brand-logo-img" src="https://i.postimg.cc/GtGRSVTZ/amzura.png" alt="AMZURA — Amazon FBA Coaching" data-logo />
+        <span class="brand-fallback">
           <span class="emblem">A</span>
           <span class="wordmark"><span class="amz">AMZ</span><span class="ura">URA</span></span>
         </span>
@@ -291,8 +292,11 @@
   <footer class="site-footer">
     <div class="container">
       <div class="brand">
-        <span class="emblem">A</span>
-        <span class="wordmark" style="font-size:1.25rem;"><span class="amz">AMZ</span><span class="ura">URA</span></span>
+        <img class="brand-logo-img footer-logo" src="https://i.postimg.cc/GtGRSVTZ/amzura.png" alt="AMZURA" data-logo />
+        <span class="brand-fallback">
+          <span class="emblem">A</span>
+          <span class="wordmark" style="font-size:1.25rem;"><span class="amz">AMZ</span><span class="ura">URA</span></span>
+        </span>
       </div>
       <div>© <span id="year"></span> AMZURA · Amazon FBA Coaching. All rights reserved.</div>
     </div>
@@ -303,20 +307,7 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Swap in real images only when the file actually exists; otherwise
-    // leave the clean text/graphic fallback in place (no broken images).
-    function activateIfLoads(img) {
-      if (!img) return;
-      var test = new Image();
-      test.onload = function () {
-        img.classList.add("loaded");
-        var media = img.closest(".win-media");
-        if (media) media.classList.add("has-img");
-      };
-      test.onerror = function () { img.remove(); };
-      test.src = img.getAttribute("src");
-    }
-    document.querySelectorAll("[data-win], [data-logo]").forEach(activateIfLoads);
+    // (Brand/testimonial image swap is handled in main.js)
 
     // Reveal-on-scroll motion (subtle, respects reduced-motion)
     (function () {
