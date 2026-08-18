@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apply — AMZURA Mentorship</title>
+  <meta name="description" content="Apply for the AMZURA Amazon FBA mentorship program. 2-minute application." />
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/"><span class="logo-mark">A</span><span>AMZURA</span></a>
+      <a class="btn btn-ghost" href="/">← Back to site</a>
+    </div>
+  </header>
+
+  <main class="section container">
+    <div class="form-wrap">
+      <div class="section-head" style="margin-bottom:32px;">
+        <span class="eyebrow">Application</span>
+        <h2>Let's see if AMZURA is right for you</h2>
+        <p>Answer a few quick questions. Takes about 2 minutes.</p>
+      </div>
+
+      <div id="refBadgeWrap"></div>
+
+      <div class="form-card">
+        <div class="progress"><div class="progress-bar" id="bar"></div></div>
+
+        <form id="applyForm" novalidate>
+          <!-- STEP 1 -->
+          <div class="step active" data-step="1">
+            <div class="field">
+              <label>Full name</label>
+              <input type="text" name="name" autocomplete="name" required />
+              <div class="form-error" data-err="name"></div>
+            </div>
+            <div class="field">
+              <label>Email</label>
+              <input type="email" name="email" autocomplete="email" required />
+              <div class="form-error" data-err="email"></div>
+            </div>
+            <div class="field">
+              <label>Phone / WhatsApp <span class="hint">(so a mentor can reach you)</span></label>
+              <input type="tel" name="phone" autocomplete="tel" required />
+              <div class="form-error" data-err="phone"></div>
+            </div>
+            <div class="step-nav">
+              <span></span>
+              <button type="button" class="btn btn-primary" data-next>Continue →</button>
+            </div>
+          </div>
+
+          <!-- STEP 2 -->
+          <div class="step" data-step="2">
+            <div class="field">
+              <label>Where are you with Amazon FBA right now?</label>
+              <div class="radio-group" data-radio="experience">
+                <label class="radio-tile"><input type="radio" name="experience" value="complete-beginner" required /> Complete beginner — haven't started</label>
+                <label class="radio-tile"><input type="radio" name="experience" value="researching" /> Researching / learning, no product yet</label>
+                <label class="radio-tile"><input type="radio" name="experience" value="launched" /> Already launched a product</label>
+                <label class="radio-tile"><input type="radio" name="experience" value="scaling" /> Selling & want to scale</label>
+              </div>
+              <div class="form-error" data-err="experience"></div>
+            </div>
+            <div class="field">
+              <label>What's your main goal? <span class="hint">(one sentence is fine)</span></label>
+              <textarea name="goal" placeholder="e.g. Replace my 9-5 income within 12 months"></textarea>
+            </div>
+            <div class="step-nav">
+              <button type="button" class="btn btn-ghost" data-prev>← Back</button>
+              <button type="button" class="btn btn-primary" data-next>Continue →</button>
+            </div>
+          </div>
+
+          <!-- STEP 3 -->
+          <div class="step" data-step="3">
+            <div class="field">
+              <label>How much capital can you put toward starting your FBA business?</label>
+              <div class="hint" style="margin-bottom:10px;">This covers inventory + tools, not the mentorship. Be honest — it helps us guide you.</div>
+              <div class="radio-group" data-radio="capital">
+                <label class="radio-tile"><input type="radio" name="capital" value="under-2k" required /> Under $2,000</label>
+                <label class="radio-tile"><input type="radio" name="capital" value="2k-5k" /> $2,000 – $5,000</label>
+                <label class="radio-tile"><input type="radio" name="capital" value="5k-10k" /> $5,000 – $10,000</label>
+                <label class="radio-tile"><input type="radio" name="capital" value="10k-plus" /> $10,000+</label>
+              </div>
+              <div class="form-error" data-err="capital"></div>
+            </div>
+            <div class="field">
+              <label>How soon do you want to get started?</label>
+              <div class="radio-group" data-radio="timeline">
+                <label class="radio-tile"><input type="radio" name="timeline" value="ready-now" required /> I'm ready to enroll now</label>
+                <label class="radio-tile"><input type="radio" name="timeline" value="talk-first" /> I want to talk to a mentor first</label>
+                <label class="radio-tile"><input type="radio" name="timeline" value="few-months" /> In the next few months</label>
+                <label class="radio-tile"><input type="radio" name="timeline" value="just-exploring" /> Just exploring for now</label>
+              </div>
+              <div class="form-error" data-err="timeline"></div>
+            </div>
+            <div class="step-nav">
+              <button type="button" class="btn btn-ghost" data-prev>← Back</button>
+              <button type="submit" class="btn btn-primary" id="submitBtn">Submit application →</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- RESULT SCREENS (hidden until submit) -->
+      <div id="resultArea"></div>
+      <p class="form-note">🔒 Your information is private and only shared with the AMZURA team.</p>
+    </div>
+  </main>
+
+  <script src="/assets/js/config.js"></script>
+  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/apply.js"></script>
+</body>
+</html>

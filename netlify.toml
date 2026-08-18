@@ -1,0 +1,27 @@
+# Netlify configuration for AMZURA FBA Mentorship
+[build]
+  publish = "public"
+  functions = "netlify/functions"
+
+# Stripe webhook needs the raw body, so we don't want any processing
+[functions]
+  node_bundler = "esbuild"
+
+# Friendly redirects
+[[redirects]]
+  from = "/apply"
+  to = "/apply.html"
+  status = 200
+
+[[redirects]]
+  from = "/book"
+  to = "/book.html"
+  status = 200
+
+# Security headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

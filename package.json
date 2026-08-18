@@ -1,0 +1,20 @@
+{
+  "name": "amzura-fba-mentorship",
+  "version": "1.0.0",
+  "private": true,
+  "description": "High-ticket Amazon FBA mentorship site: application funnel, Stripe payments, Cal.com booking, affiliate tracking, and Google Sheets lead delivery.",
+  "scripts": {
+    "dev": "netlify dev",
+    "start": "netlify dev"
+  },
+  "dependencies": {
+    "google-auth-library": "^9.15.0",
+    "stripe": "^17.5.0"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.37.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
