@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+<rect width="1080" height="1920" fill="#111827"/>
+<rect x="40" y="60" width="1000" height="180" rx="20" fill="#ffffff"/>
+<text x="540" y="175" font-size="90" font-family="Arial" font-weight="bold" fill="#111" text-anchor="middle">£30k in 30 days</text>
+<rect x="120" y="400" width="840" height="1100" rx="24" fill="#0b141a" stroke="#2f8bff" stroke-width="4"/>
+<text x="540" y="900" font-size="140" font-family="Arial" font-weight="bold" fill="#22c55e" text-anchor="middle">30.28K</text>
+<text x="540" y="1040" font-size="60" font-family="Arial" fill="#9aa6c7" text-anchor="middle">Last 30 days</text>
+<text x="540" y="1780" font-size="52" font-family="Arial" fill="#9aa6c7" text-anchor="middle">bottom of screenshot visible</text>
+</svg>

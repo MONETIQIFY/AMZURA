@@ -97,61 +97,61 @@
         <div class="wins-grid">
           <div class="win-card">
             <div class="win-media">
-              <img data-win="1" src="https://i.postimg.cc/7P9zFKJ7/PHOTO-2026-08-17-17-22-34-%282%29.jpg" alt="Verified student result" loading="lazy" />
+              <img data-win="1" src="https://i.postimg.cc/7P9zFKJ7/PHOTO-2026-08-17-17-22-34-%282%29.jpg" alt="Student result: £30k in 30 days" loading="lazy" />
               <div class="win-fallback">
                 <span class="verified">
                   <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                   Verified result
                 </span>
                 <div>
-                  <div class="win-amount">Student</div>
-                  <div class="win-tag">real Amazon FBA result</div>
+                  <div class="win-amount"><span class="cur">£</span>30k</div>
+                  <div class="win-tag">in 30 days</div>
                 </div>
               </div>
             </div>
             <div class="win-caption">
-              <div class="headline">Verified student result</div>
-              <p class="sub">Real numbers from a live AMZURA student store.</p>
+              <div class="headline">£30k in 30 days</div>
+              <p class="sub">Store health strong, sales trending up week over week.</p>
             </div>
           </div>
 
           <div class="win-card">
             <div class="win-media">
-              <img data-win="2" src="https://i.postimg.cc/hPGmcV9j/PHOTO-2026-08-17-17-22-34-%281%29.jpg" alt="Verified student result" loading="lazy" />
+              <img data-win="2" src="https://i.postimg.cc/hPGmcV9j/PHOTO-2026-08-17-17-22-34-%281%29.jpg" alt="Student result: £15k in one week" loading="lazy" />
               <div class="win-fallback">
                 <span class="verified">
                   <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                   Verified result
                 </span>
                 <div>
-                  <div class="win-amount">Student</div>
-                  <div class="win-tag">real Amazon FBA result</div>
+                  <div class="win-amount"><span class="cur">£</span>15k</div>
+                  <div class="win-tag">in one week · on track for £60k/mo</div>
                 </div>
               </div>
             </div>
             <div class="win-caption">
-              <div class="headline">Verified student result</div>
-              <p class="sub">Real numbers from a live AMZURA student store.</p>
+              <div class="headline">£15k in a single week</div>
+              <p class="sub">On track for a £60k month.</p>
             </div>
           </div>
 
           <div class="win-card">
             <div class="win-media">
-              <img data-win="3" src="https://i.postimg.cc/8zJrrDXQ/PHOTO-2026-08-17-17-22-34.jpg" alt="Verified student result" loading="lazy" />
+              <img data-win="3" src="https://i.postimg.cc/8zJrrDXQ/PHOTO-2026-08-17-17-22-34.jpg" alt="Student result: £600 profit on one product" loading="lazy" />
               <div class="win-fallback">
                 <span class="verified">
                   <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                   Verified result
                 </span>
                 <div>
-                  <div class="win-amount">Student</div>
-                  <div class="win-tag">real Amazon FBA result</div>
+                  <div class="win-amount"><span class="cur">£</span>600</div>
+                  <div class="win-tag">profit · one product</div>
                 </div>
               </div>
             </div>
             <div class="win-caption">
-              <div class="headline">Verified student result</div>
-              <p class="sub">Real numbers from a live AMZURA student store.</p>
+              <div class="headline">£600 profit on one product</div>
+              <p class="sub">Roughly 50% return on investment expected.</p>
             </div>
           </div>
         </div>
@@ -308,7 +308,11 @@
     function activateIfLoads(img) {
       if (!img) return;
       var test = new Image();
-      test.onload = function () { img.classList.add("loaded"); };
+      test.onload = function () {
+        img.classList.add("loaded");
+        var media = img.closest(".win-media");
+        if (media) media.classList.add("has-img");
+      };
       test.onerror = function () { img.remove(); };
       test.src = img.getAttribute("src");
     }
