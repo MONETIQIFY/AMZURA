@@ -120,18 +120,18 @@
     hideForm();
     if (res.route === "payment" && res.checkoutUrl) {
       resultArea.innerHTML =
-        '<div class="result-screen"><div class="result-icon">🎉</div><h2>You\'re a great fit!</h2>' +
-        "<p>Taking you to secure checkout to lock in your spot…</p><div class='spinner'></div></div>";
+        '<div class="result-screen"><h2>You\'re a strong fit</h2>' +
+        "<p>Taking you to secure checkout to confirm your place…</p><div class='spinner'></div></div>";
       window.location.href = res.checkoutUrl;
       return;
     }
     if (res.route === "booking") {
-      var link = window.AMZURA.calcomLink || "yourteam/strategy-call";
       var refQ = payload.affiliate ? "?ref=" + encodeURIComponent(payload.affiliate) : "";
       resultArea.innerHTML =
-        '<div class="result-screen"><div class="result-icon">📅</div><h2>Let\'s talk it through</h2>' +
+        '<div class="result-screen"><h2>Let\'s talk it through</h2>' +
         "<p>Book a free strategy call with a mentor to map out your path and answer your questions.</p>" +
-        '<a class="btn btn-primary btn-lg" href="/book.html' + refQ + '">Pick a time →</a></div>';
+        '<a class="btn btn-primary btn-lg" href="/book.html' + refQ + '">Pick a time</a>' +
+        "<p class='form-note' style='margin-top:16px;'>Taking you to the calendar…</p></div>";
       // Auto-forward after a moment
       setTimeout(function () { window.location.href = "/book.html" + refQ; }, 2500);
       return;
@@ -139,16 +139,16 @@
     // community (not in budget / just exploring)
     var discord = window.AMZURA.discordInvite || "https://discord.gg/your-invite";
     resultArea.innerHTML =
-      '<div class="result-screen"><div class="result-icon">💬</div><h2>Start with our community</h2>' +
+      '<div class="result-screen"><h2>Start with our community</h2>' +
       "<p>Based on your answers, the best next step is our free community. Learn the fundamentals, " +
-      "connect with other sellers, and join the mentorship when the timing's right.</p>" +
-      '<a class="btn btn-primary btn-lg" href="' + discord + '" target="_blank" rel="noopener">Join the Discord →</a>' +
+      "connect with other sellers, and step into the coaching when the timing's right.</p>" +
+      '<a class="btn btn-primary btn-lg" href="' + discord + '" target="_blank" rel="noopener">Join the community</a>' +
       '<p class="form-note" style="margin-top:20px;">We\'ve saved your application — a team member may still reach out.</p></div>';
   }
 
   function renderError(msg) {
     resultArea.innerHTML =
-      '<div class="result-screen"><div class="result-icon">⚠️</div><h3>Hmm, that didn\'t go through</h3>' +
+      '<div class="result-screen"><h3>That didn\'t go through</h3>' +
       "<p>" + (msg || "Please try again.") + "</p></div>";
   }
 
@@ -157,7 +157,7 @@
     var aff = (window.AMZURA.getAffiliate && window.AMZURA.getAffiliate()) || {};
     if (aff.ref) {
       document.getElementById("refBadgeWrap").innerHTML =
-        '<div style="text-align:center;"><span class="badge-ref">🔗 Referred by ' + escapeHtml(aff.ref) + "</span></div>";
+        '<div style="text-align:center;"><span class="badge-ref">Referred by ' + escapeHtml(aff.ref) + "</span></div>";
     }
   });
 

@@ -20,7 +20,7 @@
 
   <main class="section container">
     <div class="section-head">
-      <span class="eyebrow">📅 Strategy call</span>
+      <span class="eyebrow">Strategy call</span>
       <h2>Book your free mentorship call</h2>
       <p>Pick any open slot below — it syncs live with the mentors' Google Calendar, so every time shown is really available.</p>
     </div>
@@ -30,7 +30,7 @@
     <div class="cal-embed">
       <div id="my-cal-inline" style="width:100%;height:100%;min-height:640px;overflow:scroll"></div>
     </div>
-    <p class="form-note" style="margin-top:20px;">Trouble seeing the calendar? <a id="calFallback" href="#" target="_blank" rel="noopener">Open it in a new tab →</a></p>
+    <p class="form-note" style="margin-top:20px;">Trouble seeing the calendar? <a id="calFallback" href="#" target="_blank" rel="noopener">Open it in a new tab</a></p>
   </main>
 
   <script src="/assets/js/config.js"></script>
@@ -75,7 +75,7 @@
       if (aff.ref) {
         prefill = { metadata: { affiliate: aff.ref, landing: aff.landing || "" }, notes: "Referred by: " + aff.ref };
         document.getElementById("refBadgeWrap").innerHTML =
-          '<span class="badge-ref">🔗 Referred by ' + aff.ref.replace(/[<>&]/g, "") + "</span>";
+          '<span class="badge-ref">Referred by ' + aff.ref.replace(/[<>&]/g, "") + "</span>";
       }
       initCal(link, prefill);
     });
