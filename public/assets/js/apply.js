@@ -73,7 +73,7 @@
     var payload = {
       name: data.name,
       email: data.email,
-      phone: data.phone,
+      phone: (data.phoneCode ? data.phoneCode + " " : "") + (data.phone || ""),
       experience: data.experience,
       goal: data.goal || "",
       capital: data.capital,

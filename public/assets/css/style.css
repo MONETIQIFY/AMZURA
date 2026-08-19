@@ -410,6 +410,11 @@ p { margin: 0 0 1rem; color: var(--text-dim); }
   outline: none; border-color: var(--blue-bright); box-shadow: 0 0 0 3px rgba(47,107,255,0.18);
 }
 .field textarea { resize: vertical; min-height: 100px; }
+.phone-row { display: flex; gap: 10px; }
+.phone-row select { flex: 0 0 44%; max-width: 44%; }
+.phone-row input { flex: 1 1 auto; }
+@media (max-width: 480px) { .phone-row select { flex-basis: 40%; max-width: 40%; } }
+
 .radio-group { display: grid; gap: 10px; }
 .radio-tile {
   display: flex; align-items: center; gap: 12px; padding: 14px 16px;
