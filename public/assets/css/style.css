@@ -398,7 +398,7 @@ p { margin: 0 0 1rem; color: var(--text-dim); }
   background: linear-gradient(180deg, var(--bg-card), var(--bg-elev));
   border: 1px solid var(--border); border-radius: var(--radius); padding: 36px;
 }
-.field { margin-bottom: 22px; }
+.field { margin-bottom: 18px; }
 .field label { display: block; font-weight: 600; margin-bottom: 8px; font-size: 0.95rem; }
 .field .hint { color: var(--text-faint); font-size: 0.82rem; font-weight: 400; }
 .field input, .field select, .field textarea {
@@ -415,9 +415,9 @@ p { margin: 0 0 1rem; color: var(--text-dim); }
 .phone-row input { flex: 1 1 auto; }
 @media (max-width: 480px) { .phone-row select { flex-basis: 40%; max-width: 40%; } }
 
-.radio-group { display: grid; gap: 10px; }
+.radio-group { display: grid; gap: 8px; }
 .radio-tile {
-  display: flex; align-items: center; gap: 12px; padding: 14px 16px;
+  display: flex; align-items: center; gap: 12px; padding: 13px 16px;
   border: 1px solid var(--border-strong); border-radius: var(--radius-sm); cursor: pointer;
   transition: border-color 0.15s ease, background 0.15s ease;
 }

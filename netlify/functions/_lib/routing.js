@@ -10,6 +10,9 @@
 // Anyone with more than £500 qualifies as a lead.
 const LOW_CAPITAL = new Set(["0-500"]);
 
+// Timelines that mean "not a lead right now" → community.
+const EXPLORING = new Set(["just-exploring"]);
+
 function decideRoute(lead) {
   const capital = String(lead.capital || "").trim();
   const timeline = String(lead.timeline || "").trim();
@@ -17,11 +20,13 @@ function decideRoute(lead) {
   // 1) Not in budget (£0–£500) → free community (Discord)
   if (LOW_CAPITAL.has(capital)) return "community";
 
-  // 2) Qualified (£500+) and ready to enroll → straight to payment
+  // 2) Just exploring → free community (Discord)
+  if (EXPLORING.has(timeline)) return "community";
+
+  // 3) Ready to enroll now → straight to Stripe payment
   if (timeline === "ready-now") return "payment";
 
-  // 3) Qualified (£500+) but wants to talk / not immediate → booking call
-  //    (talk-first, few-months, just-exploring all become booked leads)
+  // 4) Wants to talk to a mentor first → booking call
   return "booking";
 }
 
