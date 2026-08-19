@@ -308,6 +308,26 @@ p { margin: 0 0 1rem; color: var(--text-dim); }
 .discord-embed-inner p { color: var(--text-dim); margin-bottom: 20px; }
 .discord-embed iframe { border-radius: 14px; max-width: 100%; border: 1px solid var(--border); box-shadow: 0 16px 50px rgba(0,0,0,0.4); }
 
+/* ---- "What we cover" method cards + saturation callout ---- */
+.method-card .tag {
+  display: inline-block; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--cyan); background: rgba(56,189,248,0.08);
+  border: 1px solid rgba(56,189,248,0.25); padding: 3px 10px; border-radius: 999px; margin-bottom: 12px;
+}
+.callout {
+  max-width: 920px; margin: 48px auto 0; border-radius: var(--radius); padding: 34px 36px;
+  border: 1px solid rgba(239,68,68,0.28);
+  background: linear-gradient(180deg, rgba(239,68,68,0.06), var(--bg-card)); position: relative;
+}
+.callout .ctag { color: #f87171; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.76rem; }
+.callout h3 { margin: 8px 0 14px; font-size: clamp(1.4rem, 3vw, 1.9rem); }
+.callout p { margin: 0 0 14px; font-size: 1.02rem; }
+.callout .fix {
+  color: var(--text); font-weight: 700; font-size: 1.08rem; margin: 0;
+  padding-top: 16px; border-top: 1px solid var(--border);
+}
+.callout .fix .hl2 { color: var(--cyan); }
+
 /* ---- Price comparison (cost of doing nothing vs AMZURA) ---- */
 .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 900px; margin: 0 auto; align-items: stretch; }
 .compare-card {
