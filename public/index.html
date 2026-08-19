@@ -335,10 +335,11 @@
           <h3>Talk to the team</h3>
           <p>Email us directly, or jump into our community and ask anything.</p>
           <div class="contact-methods">
-            <a class="btn btn-primary btn-lg" href="mailto:amzura.admin@gmail.com">Email us</a>
+            <a class="btn btn-primary btn-lg" id="emailBtn" href="mailto:amzura.admin@gmail.com">Email us</a>
             <a class="btn btn-ghost btn-lg" id="contactDiscord" href="#" target="_blank" rel="noopener">Join the community</a>
           </div>
-          <p class="form-note" style="margin-top:22px;">Or <a href="/apply.html">apply now</a> and a mentor will reach out.</p>
+          <p class="form-note" style="margin-top:20px;">Prefer to email directly? <a href="mailto:amzura.admin@gmail.com">amzura.admin@gmail.com</a> &nbsp;·&nbsp; <button type="button" id="copyEmail" class="linklike">copy address</button><span id="copyMsg" class="copy-msg"></span></p>
+          <p class="form-note" style="margin-top:8px;">Or <a href="/apply.html">apply now</a> and a mentor will reach out.</p>
         </div>
       </div>
     </section>
@@ -400,6 +401,32 @@
       if (cd && window.AMZURA.discordInvite) cd.href = window.AMZURA.discordInvite;
       wireVideo();
     });
+
+    // Contact email: copy to clipboard with confirmation so the click always
+    // does something, even when no mail app is configured (mailto still works).
+    (function () {
+      var email = "amzura.admin@gmail.com";
+      function flash(msg) {
+        var m = document.getElementById("copyMsg");
+        if (m) { m.textContent = msg; setTimeout(function () { m.textContent = ""; }, 2500); }
+      }
+      function copyEmail() {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(email).then(function () { flash("Copied!"); }).catch(fallback);
+        } else { fallback(); }
+      }
+      function fallback() {
+        var t = document.createElement("textarea");
+        t.value = email; t.setAttribute("readonly", ""); t.style.position = "absolute"; t.style.left = "-9999px";
+        document.body.appendChild(t); t.select();
+        try { document.execCommand("copy"); flash("Copied!"); } catch (e) { flash(email); }
+        document.body.removeChild(t);
+      }
+      var copyBtn = document.getElementById("copyEmail");
+      if (copyBtn) copyBtn.addEventListener("click", copyEmail);
+      var emailBtn = document.getElementById("emailBtn");
+      if (emailBtn) emailBtn.addEventListener("click", function () { copyEmail(); });
+    })();
     // In case config already loaded
     if (window.AMZURA && window.AMZURA.loaded) wireVideo();
   </script>

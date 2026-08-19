@@ -300,6 +300,9 @@ p { margin: 0 0 1rem; color: var(--text-dim); }
 }
 .contact-methods { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 26px; }
 .contact-methods .btn { min-width: 200px; }
+.linklike { background: none; border: none; color: var(--blue-bright); cursor: pointer; font: inherit; padding: 0; text-decoration: underline; }
+.linklike:hover { color: var(--cyan); }
+.copy-msg { color: var(--good); margin-left: 8px; font-weight: 600; }
 
 /* ---- Price comparison (cost of doing nothing vs AMZURA) ---- */
 .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 900px; margin: 0 auto; align-items: stretch; }
