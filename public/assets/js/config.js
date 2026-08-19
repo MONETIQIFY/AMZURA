@@ -13,7 +13,7 @@ window.AMZURA = {
   priceSubtext: "one-time · lifetime access",
 
   // Fallbacks used only if the site-config function is unreachable.
-  discordInvite: "https://discord.gg/your-invite",
+  discordInvite: "https://discord.gg/rQSQMAGsF",
   calcomLink: "yourteam/strategy-call",
 
   // Sales video (VSL). Put your YouTube video ID here (the part after
