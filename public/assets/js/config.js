@@ -20,8 +20,8 @@ window.AMZURA = {
   //  - videoUrl: a direct video file link (.mp4/.mov/.webm), OR
   //  - videoId:  a YouTube video ID (the part after watch?v=)
   // videoUrl takes priority. Leave both empty for the branded poster.
-  videoUrl: "",
-  videoId: "nLa_H9r0AeI",
+  videoUrl: "/assets/video/vsl.mp4",
+  videoId: "",
 
   // The "not in budget" threshold is enforced server-side; this is just
   // the label shown in the budget question.

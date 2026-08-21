@@ -1,0 +1,9 @@
+Upload your sales video here, named EXACTLY:
+  vsl.mp4
+
+Then it plays automatically in the homepage hero (no logo, full quality).
+
+Tips:
+- Use .mp4 (H.264) for best browser support.
+- GitHub web upload limit is 25MB per file. If yours is bigger, compress it
+  (e.g. export at 720p) so it uploads and loads fast.
