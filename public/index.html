@@ -465,25 +465,29 @@
       els.forEach(function (e) { io.observe(e); });
     })();
 
-    // VSL video: embed YouTube when an ID is configured or the poster is clicked
-    function embedVideo(id, autoplay) {
+    // VSL video: supports a direct video file URL (window.AMZURA.videoUrl)
+    // OR a YouTube ID (window.AMZURA.videoId). Loads on poster click.
+    function embedYouTube(id) {
       var ratio = document.getElementById("vslRatio");
       if (!ratio || !id) return;
-      var params = "rel=0&modestbranding=1&playsinline=1" + (autoplay ? "&autoplay=1" : "");
-      ratio.innerHTML = '<iframe src="https://www.youtube.com/embed/' + id + '?' + params +
-        '" title="AMZURA" allow="accelerated-download; autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
+      ratio.innerHTML = '<iframe src="https://www.youtube.com/embed/' + id +
+        '?rel=0&modestbranding=1&playsinline=1&autoplay=1" title="AMZURA" ' +
+        'allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
+    }
+    function embedFile(url) {
+      var ratio = document.getElementById("vslRatio");
+      if (!ratio || !url) return;
+      ratio.innerHTML = '<video src="' + url + '" controls autoplay playsinline ' +
+        'style="width:100%;height:100%;object-fit:contain;background:#000;"></video>';
     }
     function wireVideo() {
+      var url = window.AMZURA && window.AMZURA.videoUrl;
       var id = window.AMZURA && window.AMZURA.videoId;
       var poster = document.getElementById("vslPoster");
-      if (id) {
-        // Show poster, but load the real video on click (keeps page fast)
-        if (poster) {
-          var go = function () { embedVideo(id, true); };
-          poster.addEventListener("click", go);
-          poster.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") go(); });
-        }
-      }
+      if (!poster || (!url && !id)) return;
+      var go = function () { if (url) embedFile(url); else embedYouTube(id); };
+      poster.addEventListener("click", go);
+      poster.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") go(); });
     }
 
     document.addEventListener("amzura:config", function () {

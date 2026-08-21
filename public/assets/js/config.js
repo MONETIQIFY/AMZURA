@@ -16,9 +16,11 @@ window.AMZURA = {
   discordInvite: "https://discord.gg/rQSQMAGsF",
   calcomLink: "yourteam/strategy-call",
 
-  // Sales video (VSL). Put your YouTube video ID here (the part after
-  // "watch?v=") to embed it in the hero, e.g. "dQw4w9WgXcQ".
-  // Leave empty to show the branded "Watch how it works" poster.
+  // Sales video (VSL). Either:
+  //  - videoUrl: a direct video file link (.mp4/.mov/.webm), OR
+  //  - videoId:  a YouTube video ID (the part after watch?v=)
+  // videoUrl takes priority. Leave both empty for the branded poster.
+  videoUrl: "https://videotourl.com/videos/1787319746335-23b600e4-0654-4ba3-ab5b-0ec237a88e40.mov",
   videoId: "",
 
   // The "not in budget" threshold is enforced server-side; this is just
