@@ -196,8 +196,9 @@ p { margin: 0 0 1rem; color: var(--text-dim); }
   position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
   gap: 18px; cursor: pointer; text-align: center; padding: 24px;
   background:
-    radial-gradient(60% 60% at 50% 40%, rgba(10,107,255,0.28), transparent 70%),
-    linear-gradient(180deg, #0a1122, #05070d);
+    linear-gradient(180deg, rgba(0,0,0,0.22), rgba(0,0,0,0.42)),
+    url('/assets/video/vsl-poster.jpg') center center / cover no-repeat,
+    #05070d;
 }
 .vsl-poster .play {
   width: 84px; height: 84px; border-radius: 50%; display: grid; place-items: center;
